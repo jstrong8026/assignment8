@@ -16,7 +16,7 @@ RUN apt-get update && \
 COPY requirements.txt .
 RUN pip install --upgrade pip setuptools
 RUN pip install --no-cache-dir -r requirements.txt
-RUN pip uninstall -y setuptools wheel
+RUN pip uninstall -y setuptools wheel && python -m pip uninstall -y pip
 
 COPY . .
 RUN chown -R appuser:appgroup /app
