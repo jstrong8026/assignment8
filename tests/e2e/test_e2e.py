@@ -9,7 +9,7 @@ from playwright.sync_api import expect #This makes Playwright wait a moment for 
 @pytest.mark.e2e
 def test_hello_world(page, fastapi_server):
     """
-    Test that the homepage displays "Hello World".
+    Test that the homepage displays "Joe's Calculator-o-matic 5000".
 
     This test verifies that when a user navigates to the homepage of the application,
     the main header (`<h1>`) correctly displays the text "Hello World". This ensures
@@ -20,7 +20,7 @@ def test_hello_world(page, fastapi_server):
     
     # Use an assertion to check that the text within the first <h1> tag is exactly "Hello World".
     # If the text does not match, the test will fail.
-    assert page.inner_text('h1') == 'Hello World'
+    assert page.inner_text('h1') == "Joe's Calculator-o-matic 5000"
 
 @pytest.mark.e2e
 def test_calculator_add(page, fastapi_server):
